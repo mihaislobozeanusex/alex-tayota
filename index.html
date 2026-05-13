@@ -1,1 +1,732 @@
 
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia Auto Premium - Ghid Complet Executiv</title>
+    <style>
+        /* ==========================================
+           1. SETUP SCHEMĂ DE CULORI ȘI RESET EXTINS
+           ========================================== */
+        :root {
+            --clr-hero-gradient: linear-gradient(135deg, #020617 0%, #1e1b4b 50%, #311042 100%);
+            
+            /* Culori vii și contrastante pentru separarea radicală a etapelor */
+            --clr-etapa1: #f0f9ff; 
+            --clr-etapa1-border: #0284c7;
+            
+            --clr-etapa2: #fff5f5; 
+            --clr-etapa2-border: #e11d48;
+            
+            --clr-etapa3: #f0fdf4; 
+            --clr-etapa3-border: #16a34a;
+            
+            --clr-etapa4: #fffbeb; 
+            --clr-etapa4-border: #d97706;
+            
+            --clr-etapa5: #faf5ff; 
+            --clr-etapa5-border: #9333ea;
+            
+            --clr-etapa6: #fff7ed; 
+            --clr-etapa6-border: #ea580c;
+
+            --clr-etapa7: #f8fafc;
+            --clr-etapa7-border: #475569;
+            
+            --text-main: #0f172a;
+            --text-muted: #334155;
+            --br-radius: 24px;
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            line-height: 2;
+        }
+
+        /* Navigație Premium Modificată */
+        header {
+            background-color: rgba(15, 23, 42, 0.97);
+            backdrop-filter: blur(15px);
+            color: white;
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #38bdf8, #f43f5e, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 12px;
+        }
+
+        .nav-menu a {
+            color: #f1f5f9;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 12px 22px;
+            border-radius: 30px;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+        }
+
+        .nav-menu a:hover {
+            background-color: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: var(--clr-hero-gradient);
+            color: white;
+            padding: 160px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 30px;
+            letter-spacing: -2.5px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, #60a5fa, #f43f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #cbd5e1;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Wrapper Conținut */
+        .wrapper {
+            max-width: 1500px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        /* Separare Vizuală a Etapelor */
+        .etapa-card {
+            background-color: white;
+            border-radius: var(--br-radius);
+            padding: 70px;
+            margin-bottom: 100px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.04);
+            border-top: 16px solid #ddd;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .etapa-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        /* Culori alocate fiecărei etape în parte */
+        .etapa-1 { background-color: var(--clr-etapa1); border-top-color: var(--clr-etapa1-border); }
+        .etapa-2 { background-color: var(--clr-etapa2); border-top-color: var(--clr-etapa2-border); }
+        .etapa-3 { background-color: var(--clr-etapa3); border-top-color: var(--clr-etapa3-border); }
+        .etapa-4 { background-color: var(--clr-etapa4); border-top-color: var(--clr-etapa4-border); }
+        .etapa-5 { background-color: var(--clr-etapa5); border-top-color: var(--clr-etapa5-border); }
+        .etapa-6 { background-color: var(--clr-etapa6); border-top-color: var(--clr-etapa6-border); }
+        .etapa-7 { background-color: var(--clr-etapa7); border-top-color: var(--clr-etapa7-border); }
+
+        .etapa-numar {
+            position: absolute;
+            top: -35px;
+            left: 70px;
+            background-color: #0f172a;
+            color: white;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .etapa-card h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+        }
+
+        /* Layout pe coloane */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 1100px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 3.2rem; }
+            .etapa-card { padding: 45px; }
+        }
+
+        .rich-text p {
+            margin-bottom: 25px;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        /* Liste Stilate */
+        .custom-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .custom-list li {
+            padding-left: 50px;
+            position: relative;
+            margin-bottom: 22px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+
+        .custom-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: -2px;
+            font-weight: 900;
+            font-size: 1.6rem;
+        }
+        
+        .etapa-1 .custom-list li::before { color: var(--clr-etapa1-border); }
+        .etapa-2 .custom-list li::before { color: var(--clr-etapa2-border); }
+        .etapa-3 .custom-list li::before { color: var(--clr-etapa3-border); }
+        .etapa-4 .custom-list li::before { color: var(--clr-etapa4-border); }
+        .etapa-5 .custom-list li::before { color: var(--clr-etapa5-border); }
+        .etapa-6 .custom-list li::before { color: var(--clr-etapa6-border); }
+
+        /* Containere Vizuale Remarcabile */
+        .visual-box {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .web-image {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .caption {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* Tabele Tehnice Premium */
+        .theme-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+        }
+
+        .theme-table th, .theme-table td {
+            padding: 20px 25px;
+            text-align: left;
+            font-size: 1.05rem;
+        }
+
+        .theme-table th {
+            background-color: #0f172a;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .theme-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .theme-table tr:hover {
+            background-color: #f0f9ff;
+        }
+
+        /* Casete de Evidențiere */
+        .highlight-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 8px solid #0f172a;
+            padding: 30px;
+            border-radius: 0 16px 16px 0;
+            margin: 35px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+
+        .highlight-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #0f172a;
+        }
+
+        /* Stiluri Pentru Acordeonul FAQ */
+        .accordion-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+        }
+
+        .accordion-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .accordion-label {
+            display: block;
+            padding: 22px 30px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+            font-size: 1.15rem;
+            background: #ffffff;
+            transition: background 0.3s;
+        }
+
+        .accordion-label:hover {
+            background: #f8fafc;
+        }
+
+        .accordion-label::after {
+            content: "+";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.6rem;
+            color: #64748b;
+            transition: transform 0.3s;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            padding: 0 30px;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background: #fafafa;
+        }
+
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-content {
+            max-height: 1000px;
+            padding: 25px 30px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .accordion-item input[type="checkbox"]:checked ~ .accordion-label::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        /* Footer Executiv */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 80px 20px 40px;
+            text-align: center;
+            font-size: 1.05rem;
+            margin-top: 120px;
+            border-top: 8px solid #ea580c;
+        }
+
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .footer-brand {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 30px;
+            border-radius: 16px;
+            display: inline-block;
+            margin-bottom: 40px;
+            text-align: left;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contact-card h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .contact-card p {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .contact-card strong {
+            color: #38bdf8;
+            font-size: 1.15rem;
+        }
+
+        .footer-copy {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #475569;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="brand">🚗 AcademiaAutoPremium</div>
+            <ul class="nav-menu">
+                <li><a href="#etapa1">1. Înscriere</a></li>
+                <li><a href="#etapa2">2. Sala</a></li>
+                <li><a href="#etapa3">3. Mecanică</a></li>
+                <li><a href="#etapa4">4. Giratoriul</a></li>
+                <li><a href="#etapa5">5. Parcări</a></li>
+                <li><a href="#etapa6">6. Traseu</a></li>
+                <li><a href="#etapa7">7. FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Ghidul Strategic Vizual spre <span>Obținerea Permisului</span></h1>
+            <p>Parcurge sistemul educațional complet dedicat categoriei B. Învățare bazată pe logică rutieră, diagrame explicative, manevre detaliate pas cu pas și management emoțional avansat.</p>
+        </div>
+    </section>
+
+    <div class="wrapper">
+
+        <section id="etapa1" class="etapa-card etapa-1">
+            <div class="etapa-numar">Etapa 1</div>
+            <h2>Constituirea Dosarului Administrativ și Înscrierea</h2>
+            
+            <div class="grid-layout">
+                <div class="rich-text">
+                    <p>Drumul spre obținerea permisului de conducere începe cu mult înainte de a porni motorul pentru prima dată. Prima etapă constă în colectarea documentelor medicale și legale necesare întocmirii dosarului de examen DRPCIV.</p>
+                    <p>O analiză atentă a pieței școlilor de șoferi este esențială. Nu te ghida exclusiv după tariful total al școlarizării; de multe ori, un preț extrem de scăzut ascunde costuri suplimentare ascunse sau o calitate deficitară a pregătirii practice.</p>
+                    <p>Valabilitatea cursurilor efectuate în cadrul școlii este de exact 12 luni din momentul finalizării ultimei ore de conducere, perioadă în care trebuie promovate ambele etape ale examinării oficiale.</p>
+                    
+                    <ul class="custom-list">
+                        <li><strong>Fișa Medicală Auto:</strong> Necesită evaluări amănunțite de la specialiști în medicină internă, ortopedie, neurologie, psihiatrie, ORL și oftalmologie.</li>
+                        <li><strong>Testarea Psihologică:</strong> Un set extins de chestionare de personalitate combinat cu aparate speciale pentru măsurarea vitezei de reacție.</li>
+                        <li><strong>Certificatul de Cazier Judiciar:</strong> Document eliberat de Poliția Română care atestă istoricul legal curat al candidatului.</li>
+                        <li><strong>Taxa de Permis:</strong> Achitată prin canale securizate (Ghișeul.ro), în valoare fixă de 89 RON.</li>
+                    </ul>
+                </div>
+                
+                <div class="visual-box">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/4937494431394132479_0" alt="Șofer ținând mâinile pe volan în timpul condusului" class="web-image">
+                    <div class="caption">Imagine 1.1: Postura corectă a mâinilor pe volan în poziția recomandată 9 și un sfert.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="etapa2" class="etapa-card etapa-2">
+            <div class="etapa-numar">Etapa 2</div>
+            <h2>Metodologia de Învățare pentru Sala (Proba Teoretică)</h2>
+            
+            <div class="grid-layout">
+                <div class="visual-box">
+                    <h4 style="margin-bottom: 25px; color: #0f172a;">Structura Standard de Examinare DRPCIV</h4>
+                    <svg viewBox="0 0 400 220" width="100%" height="auto">
+                        <rect x="0" y="0" width="400" height="220" fill="#fff" rx="12"/>
+                        <rect x="20" y="30" width="270" height="32" fill="#e11d48" rx="6"/>
+                        <text x="300" y="52" font-size="13" font-weight="700" fill="#e11d48">Priorități (10)</text>
+                        <rect x="20" y="75" width="190" height="32" fill="#2563eb" rx="6"/>
+                        <text x="220" y="97" font-size="13" font-weight="700" fill="#2563eb">Semnalizare (7)</text>
+                        <rect x="20" y="120" width="140" height="32" fill="#16a34a" rx="6"/>
+                        <text x="170" y="142" font-size="13" font-weight="700" fill="#16a34a">Viteze (5)</text>
+                        <rect x="20" y="165" width="100" height="32" fill="#ea580c" rx="6"/>
+                        <text x="130" y="187" font-size="13" font-weight="700" fill="#ea580c">Mecanică (4)</text>
+                        <line x1="20" y1="210" x2="380" y2="210" stroke="#cbd5e1" stroke-width="2"/>
+                    </svg>
+                    <div class="caption" style="margin-top: 15px;">Grafic 2.1: Împărțirea tematică aproximativă a întrebărilor la proba teoretică.</div>
+                </div>
+
+                <div class="rich-text">
+                    <p>Examenul de sală presupune soluționarea unui chestionar electronic alcătuit din 26 de întrebări într-un interval fix de 30 de minute. Pentru obținerea calificativului „Admis” este imperativă bifarea a minimum 22 de răspunsuri corecte.</p>
+                    <p>Strategia greșită adoptată de marea majoritate a cursanților constă în memorarea mecanică a întrebărilor de pe diverse platforme online neacreditate. Legislația rutieră trebuie citită direct din Codul Rutier actualizat, urmărind înțelegerea conceptelor fundamentale.</p>
+                    <p>Analizează cu atenție textul întrebărilor. Unele întrebări au capcane sintactice subtile, iar variantele de răspuns pot fi toate corecte, parțial corecte sau complet false.</p>
+                    <div class="highlight-box">
+                        <h4>💡 Recomandarea Consultanților Noștri:</h4>
+                        <p>Nu efectua simulări generale de examen până când nu ai promovat chestionarele specifice pe capitole cu un procentaj de peste 95%. Concentrează-te masiv pe capitolul dedicat priorităților de trecere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="etapa3" class="etapa-card etapa-3">
+            <div class="etapa-numar">Etapa 3</div>
+            <h2>Verificări Tehnice Generale și Indicatorii de Bord</h2>
+            
+            <div class="rich-text">
+                <p>O componentă crucială testată la începutul examinării practice se referă la cunoașterea tehnică de bază a autovehiculului. Examinatorul are dreptul de a te pune să deschizi capota motorului sau să indici semnificația martorilor luminoși.</p>
+                
+                <div class="grid-layout" style="margin: 40px 0;">
+                    <div class="visual-box">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/17752537775246911401_0" alt="Compartimentul motor detaliat al unei mașini moderne" class="web-image">
+                        <div class="caption">Imagine 3.1: Componentele principale vizibile în compartimentul motor al mașinii de examinare.</div>
+                    </div>
+                    <div>
+                        <h4>Lichide esențiale ce necesită control periodic:</h4>
+                        <ul class="custom-list">
+                            <li><strong>Uleiul de motor:</strong> Nivelul optim se măsoară cu ajutorul jojei speciale, lichidul trebuind să se situeze între reperele de minim și maxim.</li>
+                            <li><strong>Lichidul de frână:</strong> Absolut critic pentru siguranță. Scăderea bruscă a nivelului indică o pierdere de presiune în sistem.</li>
+                            <li><strong>Lichidul de răcire:</strong> Menține motorul în parametri termici optimi. Nu deschideți niciodată dopul sub presiune dacă motorul este fierbinte!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p>Nivelul anvelopelor trebuie monitorizat vizual înainte de fiecare plecare la drum. Profilul benzii de rulare nu are voie, prin lege, să coboare sub pragul critic de 1.6 mm în cazul anvelopelor destinate sezonului estival.</p>
+
+                <table class="theme-table">
+                    <thead>
+                        <tr>
+                            <th>Tip Martor Semnalizare</th>
+                            <th>Semnificație Tehnică Directă</th>
+                            <th>Consecință în Cadrul Examenului</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="color: #e11d48; font-weight: bold;">Martor Presiune Ulei (Roșu)</td>
+                            <td>Lipsă gravă de presiune de ungere în interiorul motorului.</td>
+                            <td>Oprire imediată pe dreapta. Continuarea condusului duce la distrugerea motorului.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #ea580c; font-weight: bold;">Sistem Antiblocare ABS (Galben)</td>
+                            <td>Avarie electronică detectată la sistemul de asistență la frânare.</td>
+                            <td>Frâna clasică funcționează, dar mașina poate derapa la frânări violente.</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #2563eb; font-weight: bold;">Faza Lungă Activă (Albastru)</td>
+                            <td>Sistemul de iluminare la distanță este pus în funcțiune.</td>
+                            <td>Trebuie oprit obligatoriu la întâlnirea altor participanți pentru a nu-i orbi.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="etapa4" class="etapa-card etapa-4">
+            <div class="etapa-numar">Etapa 4</div>
+            <h2>Circulația și Încadrarea în Sensul Giratoriu</h2>
+            
+            <div class="grid-layout">
+                <div class="rich-text">
+                    <p>Sensul giratoriu reprezintă o intersecție cu caracteristici speciale de dirijare. Regula de bază universal valabilă menționează că vehiculele angajate deja în rotație dispun de prioritate absolută față de cele care urmează să pătrundă pe inel.</p>
+                    <p>Problemele majore apar în sensurile mari, prevăzute cu benzi multiple de circulație. Încadrarea trebuie realizată din timp, luând în calcul ieșirea pe care urmează să o folosești pentru părăsire.</p>
+                    <p>Schimbarea benzilor de circulație în interiorul sensului giratoriu se execută strict prin aplicarea regulilor generale: asigurare temeinică în oglinzile retrovizoare, acordare de prioritate celor de pe banda pe care dorești să intri și semnalizare corespunzătoare.</p>
+                    
+                    <div class="highlight-box" style="border-left-color: var(--clr-etapa4-border);">
+                        <h4>⚠️ Regula Semnalizării sub Coordonarea Alexandrei Orlovschi:</h4>
+                        <p>La părăsirea oricărui tip de sens giratoriu, acționarea semnalizatorului din <strong>dreapta</strong> este obligatorie. Aceasta se efectuează imediat după ce puntea față a mașinii a trecut de nivelul ieșirii anterioare celei dorite.</p>
+                    </div>
+                </div>
+
+                <div class="visual-box">
+                    <svg viewBox="0 0 200 200" width="75%" height="auto" style="margin: 0 auto; display: block;">
+                        <circle cx="100" cy="100" r="85" fill="#cbd5e1" />
+                        <circle cx="100" cy="100" r="45" fill="#1e293b" />
+                        <circle cx="100" cy="100" r="65" fill="none" stroke="#ffffff" stroke-dasharray="5" stroke-width="2" />
+                        <rect x="90" y="150" width="20" height="12" fill="#e11d48" rx="2" transform="rotate(-30 100 100)"/>
+                        <rect x="90" y="38" width="20" height="12" fill="#2563eb" rx="2" />
+                    </svg>
+                    <div class="caption">Grafic 4.1: Schița circulației geometrice și delimitarea benzilor în giratorii complexe.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="etapa5" class="etapa-card etapa-5">
+            <div class="etapa-numar">Etapa 5</div>
+            <h2>Manevrarea Vehiculului: Ghid Complet de Parcări</h2>
+            
+            <div class="grid-layout">
+                <div class="visual-box">
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/2735692043241688747_0" alt="Bordul unei mașini moderne cu ecran digital" class="web-image">
+                    <div class="caption">Imagine 5.1: Monitorizarea atentă a oglinzilor exterioare pe parcursul executării manevrelor cu spatele.</div>
+                </div>
+                
+                <div class="rich-text">
+                    <p>Executarea parcărilor reprezintă o piatră de încercare în timpul probei practice. Mulți elevi pierd puncte prețioase din cauza neasigurării sau din cauza poziționării deficitare a mașinii în raport cu reperele fixe.</p>
+                    <p>În timpul manevrelor efectuate în marșarier, viteza de deplasare trebuie să fie extrem de redusă, controlată fin exclusiv din pedala de ambreiaj, permițând rotirea rapidă a volanului.</p>
+                    
+                    <ul class="custom-list">
+                        <li><strong>Parcarea Laterală cu Spatele:</strong> Oprește la o distanță laterală de cca 50 cm de mașina reper. Rotește volanul maxim spre dreapta și mergi înapoi până observi în oglinda stângă farul drept al mașinii din spate. Îndreaptă roțile și continuă până când oglinda ta dreaptă depășește stopul mașinii din față, apoi virează maxim stânga.</li>
+                        <li><strong>Gararea cu Spatele (la 90°):</strong> Avansează până când poziția corpului tău depășește cu un metru spațiul de parcare liber, virează complet în direcția parcării și ghidează-te după liniile de demarcație vizibile în oglinzile laterale pliate ușor în jos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="etapa6" class="etapa-card etapa-6">
+            <div class="etapa-numar">Etapa 6</div>
+            <h2>Proba Practică (Traseul) și Managementul Emoțiilor</h2>
+            
+            <div class="rich-text">
+                <p>Marea majoritate a candidaților eșuează la proba practică din motive pur psihologice. Nivelul ridicat de adrenalină și stres provoacă blocaje cognitive severe, ducând la omiterea unor detalii elementare de trafic.</p>
+                <p>Examinatorul instalat pe scaunul din dreapta nu este un inamic, ci un observator legal a cărui principală misiune este siguranța publică. El evaluează dacă deții controlul complet asupra traiectoriei mașinii și dacă demonstrezi un comportament preventiv solid.</p>
+                
+                <div class="highlight-box" style="border-left-color: var(--clr-etapa6-border); background: #ffffff;">
+                    <h4>📋 Reguli stricte de evitat pentru eliminare directă (21 puncte):</h4>
+                    <p>1. Neacordarea priorității de trecere pietonilor angajați regulamentar pe trecerile marcate.<br>
+                    2. Nerespectarea culorii roșii a semaforului sau a indicatorului STOP (oprirea completă a roților este obligatorie!).<br>
+                    3. Intervenția fizică a examinatorului asupra pedalelor sau volanului pentru evitarea unui impact iminent.</p>
+                </div>
+                
+                <p>Fii atent la comenzile date de examinator. Acesta nu te va induce niciodată în eroare în mod intenționat cerându-ți să încalci legea, însă îți poate cere să efectuezi manevre în locuri la limita legalității, testându-ți vigilența.</p>
+            </div>
+        </section>
+
+        <section id="etapa7" class="etapa-card etapa-7">
+            <div class="etapa-numar">Etapa 7</div>
+            <h2>Secțiunea Oficială de Întrebări Frecvente (FAQ)</h2>
+            
+            <p style="margin-bottom: 30px; color: var(--text-muted);">Consultă răspunsurile oficiale oferite de specialiștii noștri referitor la cele mai comune neclarități întâmpinate în timpul școlarizării auto.</p>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="faq-1">
+                <label for="faq-1" class="accordion-label">Câte ore de conducere sunt obligatorii în cadrul școlii?</label>
+                <div class="accordion-content">
+                    <p>Pentru categoria B, programa oficială aprobată de Ministerul Transporturilor obligă efectuarea a cel puțin 30 de ore de pregătire practică (conducere efectivă în trafic cu instructorul autorizat) și minimum 24 de ore de pregătire teoretică la legislație rutieră în cadrul sălii de curs.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="faq-2">
+                <label for="faq-2" class="accordion-label">Ce se întâmplă în caz de respingere la proba de traseu?</label>
+                <div class="accordion-content">
+                    <p>Dacă ești declarat respins la proba practică, va trebui să achiți din nou taxa de examinare, să efectuezi în mod obligatoriu cel puțin 6 ore suplimentare de conducere (ore de redresare și perfecționare) documentate cu adeverință de la școală și să depui dosarul pentru o nouă programare după trecerea unui termen minim legal de 15 zile calendaristice.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="faq-3">
+                <label for="faq-3" class="accordion-label">Pot susține examenul auto în alt județ decât cel de domiciliu?</label>
+                <div class="accordion-content">
+                    <p>Examenul se susține în mod obligatoriu în județul în care ai domiciliul stabil trecut în cartea de identitate sau în județul în care deții o viză de flotant (rezidență temporară) valabilă, eliberată cu cel puțin 6 luni înainte de data programării la examen.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="faq-4">
+                <label for="faq-4" class="accordion-label">Ce reprezintă conceptul de conducere preventivă?</label>
+                <div class="accordion-content">
+                    <p>Conducerea preventivă reprezintă un comportament rutier specific prin care șoferul anticipează din timp situațiile potențial periculoase din trafic, reușind să evite producerea unui accident rutier chiar și atunci când ceilalți participanți la trafic (șoferi sau pietoni) comit greșeli flagrante sau încalcă regulile de circulație.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <input type="checkbox" id="faq-5">
+                <label for="faq-5" class="accordion-label">Care este valabilitatea dosarului de școlarizare?</label>
+                <div class="accordion-content">
+                    <p>Dosarul de școlarizare are o valabilitate de fix un an de la data absolvirii școlii (data emiterii ultimei adeverințe). În acest interval poți susține examenul teoretic și cel practic de câte ori este nevoie, respectând termenele de așteptare dintre programări.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">Academia Auto Premium</div>
+            
+            <div class="contact-card">
+                <h4>Asistență Cursanți & Înscrieri</h4>
+                <p>Persoană de contact dedicată: <strong>Alexandra Orlovschi</strong></p>
+                <p>Departament: Management Educațional și Relații Publice</p>
+                <p>Consultant autorizat pentru dosare DRPCIV și programări examinări.</p>
+            </div>
+            
+            <p>Un proiect educațional digital open-source optimizat pentru stocare și rulare stabilă prin intermediul platformei GitHub Pages.</p>
+            <p class="footer-copy">&copy; 2026 Toate drepturile rezervate. Materialele media și diagramele tehnice din această pagină sunt proprietate exclusivă cu caracter didactic auto.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
